@@ -7,6 +7,7 @@
 
 #include <Barcos.h>
 
+//klase ontan array de los barcos de un jugador y otro array de los barcos del otro
 
 Barcos :: Barcos ()
 {
