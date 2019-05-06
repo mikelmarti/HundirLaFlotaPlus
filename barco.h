@@ -6,19 +6,17 @@
  */
 
 
-
-
 class barco
 	{
 		private:
-	char* Letraini;
-	char* Letrafin;
-    int* numcasillas;
-    int* numini;
-    int* numfin;
+			char* Letraini;
+			char* Letrafin;
+			int* numcasillas;
+			int* numini;
+			int* numfin;
 
 		public :
-    barco :: barco ();
+
 
 
 	};

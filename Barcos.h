@@ -19,8 +19,6 @@ class Barcos
 
 	public:
 
-		Barcos :: Barcos ();
-		Barcos :: Barcos (unsigned int longitud);
 
 	};
 
