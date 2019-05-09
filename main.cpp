@@ -10,16 +10,14 @@
 using namespace std;
 
 
-char* jugador1;
-char* jugador2;
-char* nombrePartida;
+char jugador1;
+char jugador2;
+char nombrePartida;
 //leer los primeros tres datos del fichero
 
 int main ()
 {
 	cout << " Se han cargado los Ficheros de ambos jugadores" <<  endl;
-	cout << " Ahora le toca jugar al Jugador numero 1" <<  endl;
-
 
 }
 

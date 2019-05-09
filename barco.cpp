@@ -8,7 +8,14 @@
 
 #include "barco.h"
 
-barco :: barco ()
+barco :: barco (char LF, char LI, int NC, int NI, int NF)
 {
-barco = new barco();
+this->Letrafin=LF;
+this->Letraini = LI;
+this->numcasillas = NC;
+this->numfin= NF;
+this->numini=NI;
 }
+
+
+
