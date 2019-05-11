@@ -5,20 +5,23 @@
  *      Author: ALUMNO
  */
 
+#ifndef BARCO_H_
+#define BARCO_H_
 
 class barco
-	{
-		private:
-			char Letraini;
-			char Letrafin;
-			int numcasillas;
-			int numini;
-			int numfin;
+{
+	private:
+	char letraIni;
+	char letraFin;
+	int numCasillas;
+	int numIni;
+	int numFin;
 
-		public :
+	public :
 
-			barco :: barco (char LF, char LI, int NC, int NI, int NF);
-
+	barco();
+	barco(char letraFin, char letraIni, int numCasillas, int numIni, int numFin);
+	~barco();
 	char getLetrafin() const;
 	void setLetrafin(char letrafin) ;
 	char getLetraini() const;
@@ -30,3 +33,4 @@ class barco
 	int getNumini() const;
 	void setNumini(int numini);
 };
+#endif
