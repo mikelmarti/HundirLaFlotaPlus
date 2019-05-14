@@ -11,7 +11,6 @@
 using namespace std;
 #include "interaccion.h"
 
-
 //leer los primeros tres datos del fichero
 
 int main ()
@@ -36,8 +35,11 @@ int main ()
 
 	LecturaFichero::leerDeFichero(nom1,nom2,nomPartida, barcos1,barcos2, numeroDeBarcos);
 
+	cout<<"h"<<endl; //proba, honea iristen da
+
 	switch(*numeroDeBarcos)
 	{
+	cout<<"o"<<endl; //proba, honea ez da iristen
 	case 5: numeroNecesarioDeAciertos=16;
 		break;
 	case 7: numeroNecesarioDeAciertos=21;
@@ -68,5 +70,3 @@ int main ()
 	}
 	}while(!acaba);
 }
-
-
