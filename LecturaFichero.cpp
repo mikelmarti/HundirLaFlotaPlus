@@ -26,6 +26,7 @@ void LecturaFichero::leerDeFichero(char* nomPartida, char* nom1, char* nom2, bar
 	int numFinCopia=0;
 	int opcion;
 
+
 	FILE * fic;
 	fic=fopen("HLF.txt", "r");
 
@@ -43,6 +44,7 @@ void LecturaFichero::leerDeFichero(char* nomPartida, char* nom1, char* nom2, bar
 	cout<<nom2<<endl;
 	cout<<nomPartida<<endl;
 
+	//k
 
 	for(int i=0; i<num; i++)
 	{
