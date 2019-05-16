@@ -173,7 +173,7 @@ void interaccion::hacerMovimiento(char* jugador, bool*tiros)
 		if(!existeFil) printf("Cuidado, ¡esa fila no existe!\n");
 	}while(!existeFil);
 
-	tiroDefinitivo=(colNumerizado+(fila-1)*10)-1;
+	tiroDefinitivo=(colNumerizado+(fila-1)*10);
 	tiros[tiroDefinitivo]=true;
 }
 char interaccion::uppercase(char a)

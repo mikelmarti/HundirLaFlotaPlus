@@ -16,14 +16,14 @@ using namespace std;
 int main ()
 {
 	bool acaba=false;
-	char* nom1;
-	char* nom2;
-	char* nomPartida;
-	barco barcos1[5];
-	barco barcos2[5];
+	char nom1[40];
+	char nom2[40];
+	char nomPartida[40];
+	barco barcos1[9];
+	barco barcos2[9];
 	bool tiros1[100];
 	bool tiros2[100];
-	int * numeroDeBarcos=0;
+	int * numeroDeBarcos=(int*)malloc(sizeof(char));
 	int numeroNecesarioDeAciertos=0;
 
 	//boolean arrayak falsen inizializatu
@@ -34,18 +34,9 @@ int main ()
 	}
 
 	LecturaFichero::leerDeFichero(nomPartida,nom1,nom2, barcos1,barcos2, numeroDeBarcos);
-	cout<<"o"<<endl; //proba, honea ez da iristen
-	cout<<nom1<<endl;
-	cout<<numeroDeBarcos<<endl;
-	cout<<"o"<<endl; //proba, honea ez da iristen
-		cout<<nom2<<endl;
-		cout<<"o"<<endl; //proba, honea ez da iristen
-		cout<<nomPartida<<endl;
-		cout<<"o"<<endl; //proba, honea ez da iristen
 
 	switch(*numeroDeBarcos)
 	{
-	cout<<"o"<<endl; //proba, honea ez da iristen
 	case 5: numeroNecesarioDeAciertos=16;
 		break;
 	case 7: numeroNecesarioDeAciertos=21;
