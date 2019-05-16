@@ -33,9 +33,15 @@ int main ()
 		tiros2[i]=false;
 	}
 
-	LecturaFichero::leerDeFichero(nom1,nom2,nomPartida, barcos1,barcos2, numeroDeBarcos);
-
-	cout<<"h"<<endl; //proba, honea iristen da
+	LecturaFichero::leerDeFichero(nomPartida,nom1,nom2, barcos1,barcos2, numeroDeBarcos);
+	cout<<"o"<<endl; //proba, honea ez da iristen
+	cout<<nom1<<endl;
+	cout<<numeroDeBarcos<<endl;
+	cout<<"o"<<endl; //proba, honea ez da iristen
+		cout<<nom2<<endl;
+		cout<<"o"<<endl; //proba, honea ez da iristen
+		cout<<nomPartida<<endl;
+		cout<<"o"<<endl; //proba, honea ez da iristen
 
 	switch(*numeroDeBarcos)
 	{
