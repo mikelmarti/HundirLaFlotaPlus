@@ -34,16 +34,9 @@ void LecturaFichero::leerDeFichero(char* nomPartida, char* nom1, char* nom2, bar
 	int num=opcion*2+3;
 	*numeroDeBarcos=num;
 
-//	barcos1=(barco*)malloc(sizeof(barco)*num);
-//	barcos2=(barco*)malloc(sizeof(barco)*num);
-
 	fscanf(fic, "%s", nomPartida);
 	fscanf(fic, "%s", nom1);
 	fscanf(fic, "%s", nom2);
-
-	cout<<nom1<<endl;
-	cout<<nom2<<endl;
-	cout<<nomPartida<<endl;
 
 	for(int i=0; i<num; i++)
 	{
@@ -57,12 +50,6 @@ void LecturaFichero::leerDeFichero(char* nomPartida, char* nom1, char* nom2, bar
 		numComCopia = numCom;
 		fscanf(fic, "%i", &numFin);
 		numFinCopia = numFin;
-
-		cout<<letraComCopia<<endl;
-		cout<<letraFinCopia<<endl;
-		cout<<tamanyoCopia<<endl;
-		cout<<numComCopia<<endl;
-		cout<<numFinCopia<<endl;
 
 		barco * nuevoBarco = new barco(letraFinCopia, letraComCopia, tamanyoCopia, numComCopia, numFinCopia);
 
@@ -83,13 +70,7 @@ void LecturaFichero::leerDeFichero(char* nomPartida, char* nom1, char* nom2, bar
 		fscanf(fic, "%i", &numFin);
 		numFinCopia = numFin;
 
-		cout<<letraComCopia<<endl;
-		cout<<letraFinCopia<<endl;
-		cout<<tamanyoCopia<<endl;
-		cout<<numComCopia<<endl;
-		cout<<numFinCopia<<endl;
-
-		barco * nuevoBarco = new barco(letraFin, letraCom, tamanyo, numCom, numFin);
+		barco * nuevoBarco = new barco(letraFinCopia, letraComCopia, tamanyoCopia, numComCopia, numFinCopia);
 		*(barcos2+i)=*nuevoBarco;
 
 	}

@@ -23,6 +23,9 @@ int main ()
 	barco barcos2[9];
 	bool tiros1[100];
 	bool tiros2[100];
+	bool aciertos1[100];
+	bool aciertos2[100];
+
 	int * numeroDeBarcos=(int*)malloc(sizeof(char));
 	int numeroNecesarioDeAciertos=0;
 
@@ -31,6 +34,8 @@ int main ()
 	{
 		tiros1[i]=false;
 		tiros2[i]=false;
+		aciertos1[i]=false;
+		aciertos2[i]=false;
 	}
 
 	LecturaFichero::leerDeFichero(nomPartida,nom1,nom2, barcos1,barcos2, numeroDeBarcos);
@@ -49,19 +54,21 @@ int main ()
 
 	do{
 	interaccion::mapaConTiros(barcos1, tiros1, *numeroDeBarcos);
-	interaccion::hacerMovimiento(nom1,tiros1);
-	acaba = interaccion::haTerminado(tiros1, numeroNecesarioDeAciertos);
+	interaccion::hacerMovimiento(nom1,tiros1, barcos1, aciertos1, *numeroDeBarcos);
+	acaba = interaccion::haTerminado(aciertos1, numeroNecesarioDeAciertos);
 	if(acaba)
 	{
+		interaccion::mapaConTiros(barcos1, tiros1, *numeroDeBarcos);
 		cout << "Has ganado, " << nom1 << "! Enhorabuena!";
 		cout << endl;
 	}
 
 	interaccion::mapaConTiros(barcos2, tiros2, *numeroDeBarcos);
-	interaccion::hacerMovimiento(nom2, tiros2);
-	acaba = interaccion::haTerminado(tiros1, numeroNecesarioDeAciertos);
+	interaccion::hacerMovimiento(nom2, tiros2, barcos2, aciertos2, *numeroDeBarcos);
+	acaba = interaccion::haTerminado(aciertos2, numeroNecesarioDeAciertos);
 	if(acaba)
 	{
+		interaccion::mapaConTiros(barcos2, tiros2, *numeroDeBarcos);
 		cout << "Has ganado, " << nom2 << "! Enhorabuena!";
 		cout << endl;
 	}

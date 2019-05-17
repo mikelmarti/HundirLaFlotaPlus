@@ -18,7 +18,7 @@ class interaccion
 	static bool hayBarcos(barco * barcos, int num, int fila, int col);
 	static bool hayBarco(barco b, int fila, int col);
 	static int numerizarLetra(char c);
-	static void hacerMovimiento(char* jugador, bool*tiros);
+	static void hacerMovimiento(char* jugador, bool*tiros, barco * barcos, bool* aciertos, int numBarcos);
 	static char uppercase(char a);
 	static bool existeColumna(char col);
 	static bool existeFila(int fila);

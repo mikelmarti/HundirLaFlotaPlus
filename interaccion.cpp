@@ -142,24 +142,28 @@ int interaccion::numerizarLetra(char c)
 	return 0;
 }
 
-void interaccion::hacerMovimiento(char* jugador, bool*tiros)
+void interaccion::hacerMovimiento(char* jugador, bool*tiros, barco * barcos, bool* aciertos, int numBarcos)
 {
 	char col=' ';
 	int colNumerizado=0;
 	int fila=0;
 	bool existeCol=false;
 	bool existeFil=false;
+	bool yaHayTiro=false;
 
 	int tiroDefinitivo=0;
 
 	cout << "Es tu turno, " << jugador <<"!";
 	cout<< endl;
-
+do{
+	yaHayTiro=false;
 	do
 	{
 		cout << "Introduce la columna a bombardear! (A-J)"<< endl;
 		cin >> col;
 		col = uppercase(col);
+		cin.clear();
+		fflush(stdin);
 		colNumerizado = numerizarLetra(col);
 		existeCol=existeColumna(col);
 		if(!existeCol) printf("Cuidado, ¡esa columna no existe!\n");
@@ -169,12 +173,19 @@ void interaccion::hacerMovimiento(char* jugador, bool*tiros)
 	{
 		cout << "Introduce la fila a bombardear! (1-10)"<< endl;
 		cin >> fila;
+		cin.clear();
+		fflush(stdin);
 		existeFil=existeFila(fila);
 		if(!existeFil) printf("Cuidado, ¡esa fila no existe!\n");
 	}while(!existeFil);
-
 	tiroDefinitivo=(colNumerizado+(fila-1)*10);
+	if(tiros[tiroDefinitivo]) yaHayTiro=true;
+	if(yaHayTiro) cout << "Esa casilla ya esta marcada!"<< endl;
+}while(yaHayTiro);
+
 	tiros[tiroDefinitivo]=true;
+	if(hayBarcos(barcos, numBarcos, fila, colNumerizado)) aciertos[tiroDefinitivo]=true;
+
 }
 char interaccion::uppercase(char a)
 {
