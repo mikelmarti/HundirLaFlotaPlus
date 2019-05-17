@@ -10,9 +10,9 @@
 #include <iostream>
 using namespace std;
 #include "interaccion.h"
-
+#include <windows.h>
 //leer los primeros tres datos del fichero
-
+void animacionFin();
 int main ()
 {
 	bool acaba=false;
@@ -73,4 +73,34 @@ int main ()
 		cout << endl;
 	}
 	}while(!acaba);
+}
+
+void animacionFin()
+{
+	for(int i=0;i<50;i++)
+	{
+		cout<< "     *     G"<<endl;
+		Sleep(50);
+		cout<< "     *       A"<<endl;
+		Sleep(50);
+		cout<< "    * *        N"<<endl;
+		Sleep(50);
+		cout<< "   *   *         A"<<endl;
+		Sleep(50);
+		cout<< "  *     *          S"<<endl;
+		Sleep(50);
+		cout<< " *       *           T"<<endl;
+		Sleep(50);
+		cout<< "  *     *              E"<<endl;
+		Sleep(50);
+		cout<< "   *   *                 !"<<endl;
+		Sleep(50);
+		cout<< "    * *                    !"<<endl;
+		Sleep(50);
+		cout<< "     *                       !"<<endl;
+		Sleep(50);
+		cout<< "     *                         !"<<endl;
+		Sleep(50);
+	}
+
 }
