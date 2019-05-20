@@ -11,9 +11,10 @@
 using namespace std;
 #include "interaccion.h"
 #include <windows.h>
-//leer los primeros tres datos del fichero
+#include "DB.h"
+
 void animacionFin();
-int main ()
+int main()
 {
 	bool acaba=false;
 	char nom1[40];
@@ -26,7 +27,7 @@ int main ()
 	bool aciertos1[100];
 	bool aciertos2[100];
 
-	int * numeroDeBarcos=(int*)malloc(sizeof(char));
+	int * numeroDeBarcos=(int*)malloc(sizeof(int));
 	int numeroNecesarioDeAciertos=0;
 
 	//boolean arrayak falsen inizializatu
@@ -38,6 +39,7 @@ int main ()
 		aciertos2[i]=false;
 	}
 
+	//DB::abrir();
 	LecturaFichero::leerDeFichero(nomPartida,nom1,nom2, barcos1,barcos2, numeroDeBarcos);
 
 	switch(*numeroDeBarcos)
@@ -51,7 +53,7 @@ int main ()
 	}
 
 	cout << " Se han cargado los Ficheros de ambos jugadores" <<  endl;
-
+	cout << " Vais a jugar la partida:"<< nomPartida <<  endl;
 	do{
 	interaccion::mapaConTiros(barcos1, tiros1, *numeroDeBarcos);
 	interaccion::hacerMovimiento(nom1,tiros1, barcos1, aciertos1, *numeroDeBarcos);

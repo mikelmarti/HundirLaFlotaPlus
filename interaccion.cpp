@@ -18,7 +18,7 @@
 #include <stdlib.h>
 #include <iostream>
 using namespace std;
-
+#include "DB.h"
 void interaccion::mapa()
 {
 	printf("    A   B   C   D   E   F   G   H   I   J\n");
@@ -152,7 +152,7 @@ void interaccion::hacerMovimiento(char* jugador, bool*tiros, barco * barcos, boo
 	bool yaHayTiro=false;
 
 	int tiroDefinitivo=0;
-
+//	bool acierta = false;
 	cout << "Es tu turno, " << jugador <<"!";
 	cout<< endl;
 do{
@@ -184,8 +184,12 @@ do{
 }while(yaHayTiro);
 
 	tiros[tiroDefinitivo]=true;
-	if(hayBarcos(barcos, numBarcos, fila, colNumerizado)) aciertos[tiroDefinitivo]=true;
-
+	if(hayBarcos(barcos, numBarcos, fila, colNumerizado))
+	{
+		 aciertos[tiroDefinitivo]=true;
+//		 acierta=true;
+	}
+//	DB::escribir(acierta, fila, col,jugador);
 }
 char interaccion::uppercase(char a)
 {
